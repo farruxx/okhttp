@@ -182,9 +182,9 @@ public final class Cache implements Closeable, Flushable {
   }
 
   private static String urlToKey(Request request) {
-    if(request.tag() instanceof Request){
+    if(request.tag() instanceof Request ){
       return Util.md5Hex(((Request)request.tag()).url().toString());
-    }
+    } //use as key original url
     return Util.md5Hex(request.url().toString());
   }
 
